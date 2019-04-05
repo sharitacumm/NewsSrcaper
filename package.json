@@ -1,5 +1,5 @@
 {
-  "name": "newssrcaper",
+  "name": "NewsSrcaper",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -11,10 +11,18 @@
     "type": "git",
     "url": "git+https://github.com/sharitacumm/NewsSrcaper.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/sharitacumm/NewsSrcaper/issues"
   },
-  "homepage": "https://github.com/sharitacumm/NewsSrcaper#readme"
+  "homepage": "https://github.com/sharitacumm/NewsSrcaper#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.4",
+    "logger": "0.0.1"
+  },
+  "devDependencies": {}
 }
