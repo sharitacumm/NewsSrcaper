@@ -17,6 +17,7 @@ var PORT = process.env.PORT || 3000;
 var app = express();
 
 // Configure middleware
+var path = require ("path");
 
 // Use morgan logger for logging requests
 app.use(logger("dev"));
@@ -33,7 +34,7 @@ mongoose.connect(MONGODB_URI);
 // Connect to the Mongo DB
 
 app.get("/", function(req,res){
-     res.send("Hello World!")
+  res.sendFile(path.join(__dirname+"/public/home.html"))
 })
 
 // Routes
@@ -76,6 +77,13 @@ app.get("/scrape", function(req, res) {
 });
 
 // Route for getting all Articles from the db
+app.get("/articles", function(req, res){
+  console.log("We hit the route");
+  articleModel.find({},function(err, data){
+    console.log("err", err)
+    res.json(data)
+  })
+})
 
 // Route for grabbing a specific Article by id, populate it with it's note
 
